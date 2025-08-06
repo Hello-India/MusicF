@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 import Player from './components/Player'
-import { cn } from './lib/utils'
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false)

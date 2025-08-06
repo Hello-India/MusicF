@@ -1,5 +1,4 @@
 import { Play, Heart, MoreHorizontal } from 'lucide-react'
-import { cn } from '../lib/utils'
 
 interface MainContentProps {
   isPlaying: boolean
@@ -8,7 +7,7 @@ interface MainContentProps {
   setCurrentTrack: (track: any) => void
 }
 
-const MainContent = ({ isPlaying, setIsPlaying, currentTrack, setCurrentTrack }: MainContentProps) => {
+const MainContent = ({ }: MainContentProps) => {
   const featuredPlaylists = [
     {
       id: 1,
@@ -114,7 +113,7 @@ const MainContent = ({ isPlaying, setIsPlaying, currentTrack, setCurrentTrack }:
           <h2 className="text-2xl font-bold mb-6">Featured Playlists</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {featuredPlaylists.map((playlist) => (
-              <div key={playlist.id} className="playlist-card">
+              <div key={playlist.id} className="playlist-card group">
                 <div className="relative mb-4">
                   <img src={playlist.image} alt={playlist.title} className="w-full aspect-square rounded object-cover" />
                   <button className="play-button absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -133,7 +132,7 @@ const MainContent = ({ isPlaying, setIsPlaying, currentTrack, setCurrentTrack }:
           <h2 className="text-2xl font-bold mb-6">Recently Played</h2>
           <div className="bg-spotify-light rounded-lg">
             {recentTracks.map((track, index) => (
-              <div key={index} className="track-item">
+              <div key={index} className="track-item group">
                 <div className="flex items-center gap-4 flex-1">
                   <span className="text-spotify-textMuted text-sm w-8">{index + 1}</span>
                   <img src={`https://images.unsplash.com/photo-${1500000000000 + index}?w=40&h=40&fit=crop&crop=center`} alt={track.title} className="w-10 h-10 rounded object-cover" />
